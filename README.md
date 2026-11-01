@@ -20,14 +20,18 @@
 4. Channel Points, rewards, polls and predictions **only after** validating supported authentication and Twitch integration constraints.
 5. Reproducible performance tests and careful updates from DankChat upstream.
 
-See [development rules](AGENTS.md), [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md) and [contributing](CONTRIBUTING.md).
+See [development rules](AGENTS.md), [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md), [source references](docs/SOURCE_REFERENCES.md) and [contributing](CONTRIBUTING.md).
 
 ## Origins and licensing
 
-The starting codebase is DankChat (Kotlin/Jetpack Compose). Leafyrino (C++/Qt) is a **reference implementation** for researching features; its code is **not** merged into this repository. Port features case-by-case, preserving original copyright notices for any reused source.
+The starting codebase is DankChat (Kotlin/Jetpack Compose). Leafyrino (C++/Qt) is available as a **pinned Git submodule** in [`references/leafyrino/`](references/leafyrino), for source analysis only; it is **not** merged into the Android app or included in the APK. Port features case-by-case, preserving original copyright notices for any reused source.
 
 See [LICENSE](LICENSE) for the inherited MIT license. Keep original notices and third-party licenses. LeafDank is not affiliated with Twitch, DankChat or Leafyrino.
 
 ## Builds
 
 The Android build configuration, application ID and signing configuration still belong to the upstream DankChat fork. Do **not** distribute these APKs as LeafDank until branding, signing and independent installation have been implemented and tested.
+
+## Source reference checkout
+
+After cloning, run `git submodule update --init references/leafyrino` to download the pinned Leafyrino sources. Its nested C++ dependencies are not needed to study the code. See [source reference instructions](docs/SOURCE_REFERENCES.md).

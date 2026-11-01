@@ -7,7 +7,7 @@
 - Настройки: `preferences/chat/ChatSettings.kt`, `preferences/appearance/AppearanceSettings.kt`.
 - Сообщения и новые Twitch GIF: `data/twitch/message/PrivMessage.kt`, `data/twitch/message/TwitchGif.kt`, `ui/chat/messages/TwitchGifContent.kt`.
 - Рендер/маппинг: `ui/chat/ChatMessageMapper.kt`; сообщения и каналы: существующие `data/repo/chat` и `ui/chat`.
-- Исходный Leafyrino — C++/Qt, без прямого встраивания его UI в Android.
+- Leafyrino доступен в закреплённом Git-субмодуле `references/leafyrino/` (C++/Qt), без прямого встраивания его UI в Android. См. `docs/SOURCE_REFERENCES.md`.
 
 ## Логическая схема
 
