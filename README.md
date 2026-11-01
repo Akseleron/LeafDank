@@ -1,17 +1,33 @@
-# <img src="https://user-images.githubusercontent.com/85196642/153115305-e39f854d-6dc9-4975-a60b-653f6ecc87df.png" height="75"> DankChat
+# LeafDank
 
-[![Build status](https://github.com/flex3r/DankChat/actions/workflows/android.yml/badge.svg?branch=develop)](https://github.com/flex3r/DankChat/actions)  
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.flxrs.dankchat)
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/com.flxrs.dankchat)  
-A signed release version is available [here](https://github.com/flex3r/DankChat/releases/tag/release)  
-Make sure to click "install anyway" when a Play Protect dialog pops up during installation.   
+**LeafDank** is a work-in-progress Android Twitch chat client based on [DankChat](https://github.com/flex3r/DankChat), with optional advanced functionality inspired by [Leafyrino](https://github.com/Leafyzito/leafyrino).
 
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/screen1.png" width="30%"/> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/screen2.png" width="30%"/> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/screen4.png" width="30%"/>
+> **Status:** planning and upstream audit. The current Android source still reflects DankChat 4.0.47. No LeafDank APK, custom package ID, Channel Points integration, or switchable UI is implemented yet. This is not an official DankChat or Leafyrino release.
 
-## Localization
-DankChat uses crowdin for translations. Except for strings in the base language, resource strings don't need to be edited anymore.  
-If you want to contribute, request access to be a translator here: https://crowdin.com/project/dankchat
+## Product principles
 
-## Donate
-Support the DankChat development and get a dank badge next to your name  
-https://streamelements.com/flex3rs/tip
+- **Minimal by default:** preserve DankChat's clean, responsive chat experience and existing functionality.
+- **Powerful when enabled:** expose expanded viewer, moderator and customization features without crowding the default UI.
+- **One chat engine:** Classic, Modern and Custom layouts must share message, connection, authentication and persistence state.
+- **Efficient on phones:** lazy rendering, bounded media caches, animation suspension off-screen, measured memory and battery impact.
+- **Safe accounts:** no browser token extraction, remotely executed login scripts, or embedded client secrets.
+
+## Planned capabilities (not yet implemented)
+
+1. Classic / Modern / Custom UI with independently selectable components and per-channel overrides.
+2. Extended badge and emote customization, GIF size controls, user cards and moderation.
+3. Additional OAuth connections with explicit permissions and revocation.
+4. Channel Points, rewards, polls and predictions **only after** validating supported authentication and Twitch integration constraints.
+5. Reproducible performance tests and careful updates from DankChat upstream.
+
+See [development rules](AGENTS.md), [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md) and [contributing](CONTRIBUTING.md).
+
+## Origins and licensing
+
+The starting codebase is DankChat (Kotlin/Jetpack Compose). Leafyrino (C++/Qt) is a **reference implementation** for researching features; its code is **not** merged into this repository. Port features case-by-case, preserving original copyright notices for any reused source.
+
+See [LICENSE](LICENSE) for the inherited MIT license. Keep original notices and third-party licenses. LeafDank is not affiliated with Twitch, DankChat or Leafyrino.
+
+## Builds
+
+The Android build configuration, application ID and signing configuration still belong to the upstream DankChat fork. Do **not** distribute these APKs as LeafDank until branding, signing and independent installation have been implemented and tested.
